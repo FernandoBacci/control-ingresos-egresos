@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso taxi</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="fonfo-app">
+    <div class="contenedor-botones-extra">
+        <a href="estadisticas.html" class="btn estadisticas">Ver Estadisticas</a>
+        <a href="index.html" class="btn volver">Inicio</a>
+
+    </div>
+    <form id="form-ingreso">
+        <h2>Ingreso de taxi</h2>
+        <!--Tipo de viajes-->
+        <label for="tipo-viaje">Tipo de viaje:</label>
+        <select id="tipo-viaje">
+            <option value="">Seleccionar...</option>
+            <option value="calle-efectivo">Calle efectivo</option>
+            <option value="calle-mp">Calle mercado pago</option>
+            <option value="didi-efectivo">Didi efectivo</option>
+            <option value="didi-tarjeta">Didi Tarjeta</option>
+            <option value="uber-efectivo">Uber efectivo</option>
+            <option value="grupo-efectivo">Grupo efectivo</option>
+            <option value="grupo-mp">Grupo mercado pago</option>
+            <option value="grupo-dolar">Grupo dolar</option>
+            <option value="premium-ctacte">Premium cta cte</option>
+            <option value="premium-efectivo">Premium efectivo</option>
+        </select>
+        <!--Ingreso de monto-->
+        <label for="monto">Monto ($):</label>
+        <input type="number" id="monto" placeholder="Ej 5000">
+        <!--Ajuste (comision/delta)-->
+        <div id="campo-ajuste">
+            <label for="ajuste">Ajuste (% o $)</label>
+            <input type="number" id="ajuste" placeholder="Ej: 10 o 500">
+        </div>
+        <!--Boton de carga-->
+        <button type="submit">Guardar Ingreso</button>
+    </form>
+    <script type="module" src="javascript/script.js"></script>
+    
+</body>
+</html>

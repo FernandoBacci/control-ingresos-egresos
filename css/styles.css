@@ -1,0 +1,328 @@
+/*Fondo general*/
+body{
+    font-family: Arial, sans-serif;
+    /*background-color: #f4f6f8;*/
+    background-color: #333;
+    margin: 0;
+    padding: 15px;
+}
+/*Titulo*/
+h1{
+    text-align: center;
+    color: #887e7e;
+}
+/*Contenedor de botones*/
+@media(min-width: 600px){
+    .contenedor-botones{
+        max-width: 400px;
+    }
+    .btn{
+        font-size: 16px;
+    }
+    #form-ingreso{
+        max-width: 400px;
+    }
+}
+.contenedor-botones{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/*Botones base*/
+.btn{
+    display: block;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+/*Colores por tipo de boton*/
+.ingreso{
+    background-color: #28a745;
+
+}
+.compras{
+    background-color: #dc3545;
+}
+.impuestos{
+    background-color: #ffc107;
+    color: black;
+}
+/*Hover*/
+.btn:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+/*==========Formulario de Ingresos==========*/
+/*corto desde aqui*/
+/* FORMULARIO INGRESO */
+
+#form-ingreso{
+max-width:380px;
+margin:30px auto;
+background:#fff;
+border:1px solid #ccc;
+border-radius:12px;
+padding:20px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+#form-ingreso h2{
+text-align:center;
+margin-bottom:20px;
+padding-bottom:12px;
+border-bottom:2px solid #ddd;
+}
+
+/* Cada bloque separado */
+#form-ingreso label{
+display:block;
+margin-top:18px;
+margin-bottom:8px;
+font-weight:bold;
+padding-bottom:8px;
+border-bottom:1px solid #e5e5e5;
+}
+
+#form-ingreso input,
+#form-ingreso select{
+width:100%;
+padding:10px;
+margin-top:8px;
+border:1px solid #bbb;
+border-radius:6px;
+box-sizing:border-box;
+background:#fafafa;
+}
+
+/* Caja especial para ajuste */
+#campo-ajuste{
+margin-top:18px;
+padding-top:5px;
+border-top:1px solid #ddd;
+}
+
+/* Botón */
+#form-ingreso button{
+margin-top:25px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#2d89ef;
+color:white;
+font-size:16px;
+font-weight:bold;
+}
+
+/*Hasta aqui*/
+
+/*Estilo de la tabla de datos*/
+#tabla-datos{
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+
+    
+}
+#tabla-datos th,
+#tabla-datos td{
+    border: 1px solid #ccc;
+    padding: 8px;
+    
+}
+#tabla-datos thead{
+    background-color: #2d89ef;
+    color: white;
+}
+#tabla-datos th{
+    font-weight: bold;
+}
+#tabla-datos{
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#tabla-datos tbody tr{
+    border-bottom: 1px solid #ddd;
+}
+#tabla-datos tbody tr:hover td{
+    background-color: rgb(109, 109, 106);
+}
+/*==========BOTONES DE FILTRO PARA EL ESTADISTICAS.HTML==========*/
+.filtros{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 95%;
+    margin: 10px auto;
+}
+.filtros button{
+    flex: 1;/*todos ocupan el mismo espacio*/
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2d89ef;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+.filtros button:hover{
+    background-color: #1b5fbf;
+}
+/* ===== RESUMEN DEL DIA ===== */
+
+#resumen-dia{
+    display: none;
+    width:95%;
+    margin:25px auto;
+    background:white;
+    padding: 12px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+#resumen-dia h2{
+    font-size: 18px;
+    text-align:center;
+    margin-bottom:10px;
+    color:#333;
+}
+
+.resumen-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:7px 8px;
+    border-bottom:1px solid #ddd;
+    font-size:15px;
+}
+
+.resumen-item span{
+    font-weight:bold;
+}
+
+.resumen-item:hover{
+    background:#f4f6f8;
+}
+
+.resumen-total{
+    margin-top:18px;
+    padding:10px;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+    background:#2d89ef;
+    color:white;
+    border-radius:10px;
+}
+/* ===== RESPONSIVE RESUMEN ===== */
+
+@media (max-width:600px){
+
+.resumen-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+    font-size:14px;
+}
+
+.resumen-item span{
+    font-size:15px;
+}
+
+.resumen-total{
+    font-size:18px;
+}
+
+}
+
+/*Botones del link para ir a estadisticas o al inicio*/
+.contenedor-botones-extra{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.contenedor-botones-extra .btn{
+flex:1;
+padding:10px;
+font-size:14px;
+}
+
+.estadisticas{
+background:#6f42c1;
+}
+
+.volver{
+background:#6c757d;
+}
+.volver{
+background:#6c757d;
+}
+/* ===== FILTRO POR FECHA ===== */
+
+.filtro-fechas{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+align-items:end;
+width:95%;
+margin:15px auto;
+background:white;
+padding:12px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.grupo-fecha{
+display:flex;
+flex-direction:column;
+flex:1;
+}
+
+.grupo-fecha label{
+margin-bottom:5px;
+font-weight:bold;
+}
+
+.grupo-fecha input{
+padding:8px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+#btn-filtrar-fecha{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:#198754;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+#btn-filtrar-fecha:hover{
+background:#157347;
+}
+.tabla-scroll{
+    width:95%;
+    margin:20px auto;
+    max-height:420px;
+    overflow-y:auto;
+    border-radius:12px;
+}
+
+#tabla-datos thead th{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}

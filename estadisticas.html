@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadisticas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Estadisticas</h1>
+    <div class="contenedor-botones-extra">
+        <a href="ingreso-taxi.html" class="btn ingreso">
+            Cargar viaje
+        </a>
+
+        <a href="index.html" class="btn volver">
+            Inicio
+        </a>
+    </div>
+
+    <div class="filtros">
+        <button id="btn-dia">Dia</button>
+        <button id="btn-semana">Semana</button>
+        <button id="btn-mes">Mes</button>
+        <button id="btn-anio">Año</button>
+
+    </div>
+    <div class="filtro-fechas">
+
+        <div class="grupo-fecha">
+            <label for="fecha-desde">Desde</label>
+            <input type="date" id="fecha-desde">
+            <input type="time" id="hora-desde">
+        </div>
+
+        <div class="grupo-fecha">
+            <label for="fecha-hasta">Hasta</label>
+            <input type="date" id="fecha-hasta">
+            <input type="time" id="hora-hasta">
+        </div>
+
+        <button id="btn-filtrar-fecha">
+            Filtrar
+        </button>
+
+    </div>
+<div class="tabla-scroll">
+    <table id="tabla-datos">
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Monto</th>
+                <th>Ajuste</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+    <!--Resumen diario-->
+<div id="resumen-dia">
+
+<h2>Resumen del día</h2>
+
+<div class="resumen-item">
+ Calle efectivo:
+ <span id="calle-efectivo">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Calle mercado pago:
+ <span id="calle-mp">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Didi efectivo:
+ <span id="didi-efectivo">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Didi tarjeta:
+ <span id="didi-tarjeta">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Uber efectivo:
+ <span id="uber-efectivo">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Grupo efectivo:
+ <span id="grupo-efectivo">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Grupo mercado pago:
+ <span id="grupo-mp">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Grupo dólar:
+ <span id="grupo-dolar">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Premium cta cte:
+ <span id="premium-ctacte">0 viajes | $0</span>
+</div>
+
+<div class="resumen-item">
+ Premium efectivo:
+ <span id="premium-efectivo">0 viajes | $0</span>
+</div>
+
+<div class="resumen-total">
+ Total viajes:
+ <span id="total-viajes">0</span>
+</div>
+
+<div class="resumen-total">
+ TOTAL DÍA:
+ $<span id="total-dia">0</span>
+</div>
+
+</div>
+
+    <script type="module" src="javascript/estadisticas.js" defer></script>
+</body>
+</html>

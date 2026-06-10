@@ -1,3 +1,4 @@
+
 const tabla = document.querySelector("#tabla-datos tbody");
 const btnDia = document.getElementById("btn-dia");
 const btnSemana = document.getElementById("btn-semana");
@@ -15,8 +16,16 @@ const horaHastaInput = document.getElementById("hora-hasta");
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
+//import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    query,
+    orderBy,
+    deleteDoc,
+    doc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyCdaQ83ZNbccXjJ4HKd2dvoOYa-uc6TYKw",
   authDomain: "control-ingresos-egresos-hogar.firebaseapp.com",
@@ -35,8 +44,9 @@ async function obtenerDatos() {
     //const querySnapshot = await getDocs(collection(db, "viajes"));
     const q = query(collection(db,"viajes"), orderBy("timestamp","desc"));
     const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-    const data = doc.data();
+    querySnapshot.forEach((documento) => {
+    const data = documento.data();
+    const id = documento.id;
 
     console.log(data); // lo dejamos para debug
 
@@ -48,9 +58,37 @@ async function obtenerDatos() {
         <td>${data.ajuste}</td>
         <td>${data.fecha}</td>
         <td>${data.hora}</td>
+        <td><button class="btn-eliminar"data-id="${id}">🗑</button></td>
     `;
 
     tabla.appendChild(fila);
+    const btnEliminar = fila.querySelector(".btn-eliminar");
+
+btnEliminar.addEventListener("click", async () => {
+
+    const confirmar = confirm(
+        "¿Seguro que querés eliminar este registro?"
+    );
+
+    if (!confirmar) return;
+
+    try {
+
+        await deleteDoc(doc(db, "viajes", id));
+
+        fila.remove();
+
+        alert("✅ Registro eliminado");
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("❌ Error al eliminar");
+
+    }
+
+});
 });
     
 }
